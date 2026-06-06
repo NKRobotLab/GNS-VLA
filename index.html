@@ -265,7 +265,7 @@ Zero-shot long-horizon manipulation remains difficult for Vision-Language-Action
       <p>Here we show a brief overview of the proposed framework, <strong>GNS-VLA</strong><img src="./static/images/logo.png" style="width:1em; height:1em; vertical-align:middle; margin: 0 0.2em;" alt="icon">.</p>
     <div style="text-align: center; margin-top: 20px;">
       <img src="./static/images/contribution.png"
-           style="width: 85%; max-width: 1000px; height: auto; display: block; margin: 0 auto;">
+           style="width: 90%; max-width: 1000px; height: auto; display: block; margin: 0 auto;">
     </div>
     </div>
   </div>
@@ -351,43 +351,38 @@ Zero-shot long-horizon manipulation remains difficult for Vision-Language-Action
       <h2>Real-World Experiments</h2>
 
       <!-- Part 1: Experimental Configuration -->
-      <h3>Experimental Configuration</h3>
+      <h3 style="text-align: center;">Experimental Configuration</h3>
       <p>
-        We deploy the proposed framework on a Franka FR3 robot equipped with a third-person camera and a wrist-mounted Intel RealSense D435i, both streaming at 480×640 resolution and 15 Hz.
-        The scene contains four food objects (yellow cake, blue cake, croissant, and banana) and two target receptacles (yellow plate and blue plate).
-        Control is performed via a 7-DoF Cartesian delta command (translation, axis-angle rotation, and gripper), using the same Gello controller for both teleoperation and deployment.
+        We deploy the proposed framework on a Franka FR3 robot equipped with a third-person and a wrist-mounted depth camera. The scene contains four food objects and two target receptacles. Control is performed via a 7-DoF Cartesian delta command, using the same Gello controller for both teleoperation and deployment.
       </p>
       <div style="text-align: center; margin-top: 16px; margin-bottom: 24px;">
         <img src="./static/images/experimental_configuration.png"
-             style="width: 90%; max-width: 1000px; height: auto; display: block; margin: 0 auto;">
+             style="width: 65%; max-width: 1000px; height: auto; display: block; margin: 0 auto;">
       </div>
 
       <!-- Part 2: Data Collection -->
-      <h3>Data Collection Example</h3>
+      <h3 style="text-align: center;">Data Collection Example</h3>
       <p>
-        We collected a real-robot manipulation dataset using teleoperation. Each trajectory contains synchronized RGB streams from both cameras.
-        The dataset contains 179 episodes (70,266 frames) covering 35 language task types, including 39 one-step, 120 two-step, and 20 three-step episodes.
+        We collected a real-robot manipulation dataset using teleoperation. Each trajectory contains synchronized RGB streams from both cameras. The dataset contains 179 episodes (70,266 frames) covering 35 language task types, including 39 one-step, 120 two-step, and 20 three-step episodes.
         The figure below shows example data collection frames from both camera views.
       </p>
       <div style="text-align: center; margin-top: 16px; margin-bottom: 24px;">
         <img src="./static/images/data_collection_example.png"
-             style="width: 90%; max-width: 1000px; height: auto; display: block; margin: 0 auto;">
+             style="width: 65%; max-width: 1000px; height: auto; display: block; margin: 0 auto;">
       </div>
 
-      <!-- Part 3: Experimental Results -->
-      <h3>Experimental Results</h3>
+      <!-- Part 3: Quantitative and Visual Analysis -->
+      <h3 style="text-align: center;">Quantitative and Visual Analysis</h3>
       <p>
-        We evaluate our method on 42 real-world Franka food-manipulation trials covering 2-step and 3-step long-horizon object-placement tasks,
-        where a rollout is successful only if all subtasks are completed in the correct order.
-        Our method achieves a <strong>42.9% task success rate (18/42)</strong>, while both fine-tuned OpenPI0.5 and Qwen2.5 + GR00T fail to complete any full long-horizon task.
+        We evaluate our method on 42 real-world Franka food-manipulation trials covering 2-step and 3-step long-horizon object-placement tasks, where a rollout is successful only if all subtasks are completed in the correct order. Our method achieves a <strong>42.9% task success rate (18/42)</strong>, while both other two compared methods fail to complete any full long-horizon task.
       </p>
-      <div style="text-align: center; margin-top: 16px; margin-bottom: 16px;">
+      <div style="text-align: center; margin-top: 16px; margin-bottom: 40px;">
         <img src="./static/images/real_world_results_1.png"
-             style="width: 90%; max-width: 1000px; height: auto; display: block; margin: 0 auto;">
+             style="width: 50%; max-width: 1000px; height: auto; display: block; margin: 0 auto;">
       </div>
       <div style="text-align: center; margin-top: 16px; margin-bottom: 8px;">
         <img src="./static/images/real_world_results_2.jpg"
-             style="width: 90%; max-width: 1000px; height: auto; display: block; margin: 0 auto;">
+             style="width: 100%; max-width: 1000px; height: auto; display: block; margin: 0 auto;">
       </div>
 
     </div>
