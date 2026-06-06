@@ -315,36 +315,30 @@ Zero-shot long-horizon manipulation remains difficult for Vision-Language-Action
     <div class="content has-text-justified">
       <h2>Simulation Evaluation</h2>
       <p>
-        We evaluate the proposed framework on multiple benchmarks spanning different numbers of subtasks, diverse subtask combinations, and multiple ordering permutations.
-        As shown in Table 1, scene-graph reasoning improves the robustness of the baseline <strong>Qwen2.5 + GR00T VLA</strong> framework.
-        While SG Cross-Attn raises overall success to 46.67%, the proposed VLA methods, TSG-VLA and GNS-VLA, further achieve 59.97% and 60.11%, respectively,
-        with particularly strong gains under language and visual perturbations.
+        We evaluate the proposed framework on LIBERO-10-Plus benchmark spanning different numbers of subtasks, diverse subtask combinations, and multiple ordering permutations. Table 1 shows that scene-graph reasoning improves the robustness of the baseline, with particularly strong gains under language and visual perturbations.
       </p>
       <div style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
-        <p style="font-weight: bold; margin-bottom: 8px;">Table 1: Success rate on LIBERO-10-Plus under different perturbation categories.</p>
+        <p style="font-weight: bold; margin-bottom: 8px;">Table 1: Success Rate on LIBERO-10-Plus under Different Perturbation Categories.</p>
         <img src="./static/images/simulation_table_1.png"
-             style="width: 100%; max-width: 1000px; height: auto; display: block; margin: 0 auto;">
+             style="width: 75%; max-width: 1000px; height: auto; display: block; margin: 0 auto;">
       </div>
 
       <p>
-        We further evaluate the proposed frameworks on our improved LIBERO and CALVIN benchmarks, which are specifically designed for zero-shot long-horizon compositional manipulation,
-        requiring models to compose familiar primitives into unseen multi-step task sequences.
-        Table 2 presents results on the proposed LIBERO long-horizon compositional benchmark.
+        We further evaluate the proposed framework on our improved LIBERO and CALVIN benchmarks, which are specifically designed for zero-shot long-horizon compositional manipulation, requiring models to compose familiar primitives into unseen multi-step task sequences. Table 2 presents results on the proposed LIBERO long-horizon compositional benchmark.
       </p>
       <div style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
-        <p style="font-weight: bold; margin-bottom: 8px;">Table 2: Success rate on the proposed LIBERO long-horizon compositional benchmark.</p>
+        <p style="font-weight: bold; margin-bottom: 8px;">Table 2: Success Rate on the Proposed LIBERO Long-horizon Compositional Benchmark.</p>
         <img src="./static/images/simulation_table_2.png"
-             style="width: 100%; max-width: 1000px; height: auto; display: block; margin: 0 auto;">
+             style="width: 70%; max-width: 1000px; height: auto; display: block; margin: 0 auto;">
       </div>
 
       <p>
-        The results on the CALVIN OOD benchmark further demonstrate the effectiveness of the proposed framework,
-        showing that GNS-VLA achieves stronger compositional performance compared with generalist VLA and world-model baselines.
+        The results on the CALVIN OOD benchmark shown in Table 3 further demonstrate the effectiveness of the proposed framework, showing that GNS-VLA achieves stronger compositional performance compared with generalist VLA and world-model baselines.
       </p>
       <div style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
-        <p style="font-weight: bold; margin-bottom: 8px;">Table 3: Full-instruction evaluation on the proposed CALVIN OOD long-horizon benchmark.</p>
+        <p style="font-weight: bold; margin-bottom: 8px;">Table 3: Full-instruction evaluation on the Proposed CALVIN OOD Long-horizon Benchmark.</p>
         <img src="./static/images/simulation_table_3.png"
-             style="width: 100%; max-width: 1000px; height: auto; display: block; margin: 0 auto;">
+             style="width: 45%; max-width: 1000px; height: auto; display: block; margin: 0 auto;">
       </div>
     </div>
   </div>
@@ -353,87 +347,50 @@ Zero-shot long-horizon manipulation remains difficult for Vision-Language-Action
 
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Summary of the work -->
-    <div class="content">
+    <div class="content has-text-justified">
       <h2>Real-World Experiments</h2>
-      <p>Here we show the basic set up with random objects positions in the whole real-world experiments process, which aims to execute manipulations, including different pick-and-place, pull out napkin and pour water actions.</p>
-		    <div style="text-align: center; margin-top: 20px; margin-bottom: 20px"> <!-- Center align the image container -->
-      <img src="./static/images/configuration.png"
-           style="width: 90%; max-width: 1000px; height: auto; display: block; margin: auto;" <!-- Make the image responsive and centered -->
-    </div>
-      <p>To validate the proposed BT-TL-DMPs framework in real-world settings, we conduct two long-horizon robotic manipulation tasks, which aim to demonstrate how the integration of Behavior Trees, Signal Temporal Logic, and Dynamical Movement Primitives enables modular, reactive, and generalizable robotic behaviors under complex spatio-temporal constraints.</p>
-	<!-- Large plot display -->
-   
-      <div style="display: flex; justify-content: center; margin-top: 20px; margin-bottom: 0; background-color: #f0f0f0; padding: 20px; border-radius: 8px;">
-        <div style="text-align: center; margin: 0 20px;">
-          <img src="./static/images/exp1.png" style="height: 250px; width: auto; max-width: 100%; object-fit: cover;" />
-          <p>Scene before Breakfast Preparation</p>
-        </div>
-        <div style="text-align: center; margin: 0 20px;">
-          <img src="./static/images/exp2.png" style="height: 250px; width: auto; max-width: 100%; object-fit: cover;" />
-          <p>Scene after Breakfast Preparation</p>
-        </div>
-        <div style="text-align: center; margin: 0 20px;">
-          <img src="./static/images/exp3.png" style="height: 250px; width: auto; max-width: 100%; object-fit: cover;" />
-          <p>Breakfast Preparation Trajectories</p>
-        </div>
+
+      <!-- Part 1: Experimental Configuration -->
+      <h3>Experimental Configuration</h3>
+      <p>
+        We deploy the proposed framework on a Franka FR3 robot equipped with a third-person camera and a wrist-mounted Intel RealSense D435i, both streaming at 480×640 resolution and 15 Hz.
+        The scene contains four food objects (yellow cake, blue cake, croissant, and banana) and two target receptacles (yellow plate and blue plate).
+        Control is performed via a 7-DoF Cartesian delta command (translation, axis-angle rotation, and gripper), using the same Gello controller for both teleoperation and deployment.
+      </p>
+      <div style="text-align: center; margin-top: 16px; margin-bottom: 24px;">
+        <img src="./static/images/experimental_configuration.png"
+             style="width: 90%; max-width: 1000px; height: auto; display: block; margin: 0 auto;">
       </div>
 
-      <div style="display: flex; justify-content: center; margin-top: 20px; margin-bottom: 20px; background-color: #f0f0f0; padding: 20px; border-radius: 8px;">
-        <div style="text-align: center; margin: 0 20px;">
-          <img src="./static/images/exp4.png" style="height: 250px; width: auto; max-width: 100%; object-fit: cover;" />
-          <p>Scene before Afternoon Tea Preparation</p>
-        </div>
-        <div style="text-align: center; margin: 0 20px;">
-          <img src="./static/images/exp5.png" style="height: 250px; width: auto; max-width: 100%; object-fit: cover;" />
-          <p>Scene after Afternoon Tea Preparation</p>
-        </div>
-        <div style="text-align: center; margin: 0 20px;">
-          <img src="./static/images/exp6.png" style="height: 250px; width: auto; max-width: 100%; object-fit: cover;" />
-          <p>Afternoon Tea Preparation Preparation</p>
-        </div>
+      <!-- Part 2: Data Collection -->
+      <h3>Data Collection Example</h3>
+      <p>
+        We collected a real-robot manipulation dataset using teleoperation. Each trajectory contains synchronized RGB streams from both cameras.
+        The dataset contains 179 episodes (70,266 frames) covering 35 language task types, including 39 one-step, 120 two-step, and 20 three-step episodes.
+        The figure below shows example data collection frames from both camera views.
+      </p>
+      <div style="text-align: center; margin-top: 16px; margin-bottom: 24px;">
+        <img src="./static/images/data_collection_example.png"
+             style="width: 90%; max-width: 1000px; height: auto; display: block; margin: 0 auto;">
       </div>
 
-<p> Here we show above two task completions using the proposed framework and the construction of Behavior Trees in task <i>Afternoon Tea Preparation</i>. </p>
+      <!-- Part 3: Experimental Results -->
+      <h3>Experimental Results</h3>
+      <p>
+        We evaluate our method on 42 real-world Franka food-manipulation trials covering 2-step and 3-step long-horizon object-placement tasks,
+        where a rollout is successful only if all subtasks are completed in the correct order.
+        Our method achieves a <strong>42.9% task success rate (18/42)</strong>, while both fine-tuned OpenPI0.5 and Qwen2.5 + GR00T fail to complete any full long-horizon task.
+      </p>
+      <div style="text-align: center; margin-top: 16px; margin-bottom: 16px;">
+        <img src="./static/images/real_world_results_1.png"
+             style="width: 90%; max-width: 1000px; height: auto; display: block; margin: 0 auto;">
+      </div>
+      <div style="text-align: center; margin-top: 16px; margin-bottom: 8px;">
+        <img src="./static/images/real_world_results_2.jpg"
+             style="width: 90%; max-width: 1000px; height: auto; display: block; margin: 0 auto;">
+      </div>
 
-<div class="columns is-centered" style="margin-top: 10px;">
-<div class="column">
-  <div class="content">
-    <h4 class="title is-5" style="text-align: center;">Breakfast Preparation</h4>
-    <video id="with" autoplay controls muted loop playsinline height="100%">
-      <source src="./static/videos/1.mp4"
-              type="video/mp4">
-    </video>
-  </div>
-</div>
-
-<div class="column">
-  <h4 class="title is-5" style="text-align: center;">Afternoon Tea Preparation</h4>
-  <div class="columns is-centered">
-    <div class="column content">
-      <video id="without" autoplay controls muted loop playsinline height="100%">
-        <source src="./static/videos/2.mp4"
-                type="video/mp4">
-      </video>
     </div>
-    </div>
-    </div>
-    </div>
-
-    <div style="text-align: center; margin-top: 20px; margin-bottom: 0"> <!-- Center align the image container -->
-      <img src="./static/images/base.png"
-           style="width: 100%; max-width: 1000px; height: auto; display: block; margin: auto;" <!-- Make the image responsive and centered -->
-
-   </div>
-
-    <div style="text-align: center; margin-top: 20px; margin-bottom: 0"> <!-- Center align the video container -->
-      <video id="without" autoplay controls muted loop playsinline style="width: 40%; max-width: 800px; height: auto; display: block; margin: 0 auto;">
-        <source src="./static/videos/base.mp4"
-                type="video/mp4">
-      </video>
-   </div>
-
-  </div>
   </div>
 </section>
 
