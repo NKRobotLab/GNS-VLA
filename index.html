@@ -400,13 +400,13 @@ Zero-shot long-horizon manipulation remains difficult for Vision-Language-Action
       <p>The following videos show successful demonstrations of our method completing 2-step and 3-step long-horizon manipulation tasks in the real world.</p>
       <div style="background-color: #f0f0f0; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); margin-bottom: 32px;">
         <div style="display: flex; gap: 20px; justify-content: center; align-items: flex-start;">
-          <div style="flex: 1; min-width: 0;">
+          <div style="flex: 0 0 calc(33.33% - 10px); min-width: 0;">
             <p style="text-align:center; font-weight:bold; margin-bottom:6px;">2-Step Task Success</p>
             <video controls muted loop playsinline style="width:100%; height:auto; display:block;">
               <source src="./static/videos/success_video_1.mp4" type="video/mp4">
             </video>
           </div>
-          <div style="flex: 1; min-width: 0;">
+          <div style="flex: 0 0 calc(33.33% - 10px); min-width: 0;">
             <p style="text-align:center; font-weight:bold; margin-bottom:6px;">3-Step Task Success</p>
             <video controls muted loop playsinline style="width:100%; height:auto; display:block;">
               <source src="./static/videos/success_video_2.mp4" type="video/mp4">
@@ -418,33 +418,25 @@ Zero-shot long-horizon manipulation remains difficult for Vision-Language-Action
       <!-- Group 2: Failure Cases -->
       <p>Failure cases caused by 3 main problems of zero-shot long-horizon compositional manipulation.</p>
       <div style="background-color: #f0f0f0; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-        <div class="video-carousel-wrapper">
-          <button class="carousel-btn left-btn" onclick="scrollCarousel(-1, 'video-track-failure')">
-            &#10094;
-          </button>
-          <div id="video-track-failure" class="video-track">
-            <div class="video-item" style="min-width: calc(33.33% - 14px);">
-              <p style="text-align:center; font-weight:bold; margin-bottom:6px;">Robot Init State Generalization Failure</p>
-              <video controls muted loop playsinline>
-                <source src="./static/videos/faliure_video_1.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="video-item" style="min-width: calc(33.33% - 14px);">
-              <p style="text-align:center; font-weight:bold; margin-bottom:6px;">Language Mis-understand</p>
-              <video controls muted loop playsinline>
-                <source src="./static/videos/faliure_video_2.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="video-item" style="min-width: calc(33.33% - 14px);">
-              <p style="text-align:center; font-weight:bold; margin-bottom:6px;">Visual Perturbations</p>
-              <video controls muted loop playsinline>
-                <source src="./static/videos/faliure_video_3.mp4" type="video/mp4">
-              </video>
-            </div>
+        <div style="display: flex; gap: 20px; justify-content: center; align-items: flex-start;">
+          <div style="flex: 0 0 calc(33.33% - 14px); min-width: 0;">
+            <p style="text-align:center; font-weight:bold; margin-bottom:6px;">Robot Init State Generalization Failure</p>
+            <video controls muted loop playsinline style="width:100%; height:auto; display:block;">
+              <source src="./static/videos/faliure_video_1.mp4" type="video/mp4">
+            </video>
           </div>
-          <button class="carousel-btn right-btn" onclick="scrollCarousel(1, 'video-track-failure')">
-            &#10095;
-          </button>
+          <div style="flex: 0 0 calc(33.33% - 14px); min-width: 0;">
+            <p style="text-align:center; font-weight:bold; margin-bottom:6px;">Language Mis-understand</p>
+            <video controls muted loop playsinline style="width:100%; height:auto; display:block;">
+              <source src="./static/videos/faliure_video_2.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div style="flex: 0 0 calc(33.33% - 14px); min-width: 0;">
+            <p style="text-align:center; font-weight:bold; margin-bottom:6px;">Visual Perturbations</p>
+            <video controls muted loop playsinline style="width:100%; height:auto; display:block;">
+              <source src="./static/videos/faliure_video_3.mp4" type="video/mp4">
+            </video>
+          </div>
         </div>
       </div>
 
