@@ -314,62 +314,40 @@ Zero-shot long-horizon manipulation remains difficult for Vision-Language-Action
     <!-- Summary of the work -->
     <div class="content has-text-justified">
       <h2>Simulation Evaluation</h2>
-      <p>We conducted a comprehensive evaluation of the motion planning part in the proposed framework BT-TL-DMPs through systematic simulation. Here we show the comparison of DMP simulation in <strong><i>(left)</i></strong> generation with new start/goal positions, <strong><i>(mid)</i></strong> obstacle avoidance via trajectory-based objective, <strong><i>(right)</i></strong> obstacle avoidance via forcing-term objective.</p>
-      
-      <div style="display: flex; justify-content: center; margin-top: 20px; margin-bottom: 0; background-color: #f0f0f0; padding: 20px; border-radius: 8px;">
-        <div style="text-align: center; margin: 0 20px;">
-          <img src="./static/images/method4.png" style="height: 260px; width: auto; max-width: 100%; object-fit: cover;" />
-          <p>The Performance of Generalizing DMPs</p>
-        </div>
-        <div style="text-align: center; margin: 0 20px;">
-          <img src="./static/images/method5.png" style="height: 260px; width: auto; max-width: 100%; object-fit: cover;" />
-          <p>Unnatural Obstacle Avoidance</p>
-        </div>
-        <div style="text-align: center; margin: 0 20px;">
-          <img src="./static/images/method6.png" style="height: 260px; width: auto; max-width: 100%; object-fit: cover;" />
-          <p>Excellent Obstacle Avoidance</p>
-        </div>
+      <p>
+        We evaluate the proposed framework on multiple benchmarks spanning different numbers of subtasks, diverse subtask combinations, and multiple ordering permutations.
+        As shown in Table 1, scene-graph reasoning improves the robustness of the baseline <strong>Qwen2.5 + GR00T VLA</strong> framework.
+        While SG Cross-Attn raises overall success to 46.67%, the proposed VLA methods, TSG-VLA and GNS-VLA, further achieve 59.97% and 60.11%, respectively,
+        with particularly strong gains under language and visual perturbations.
+      </p>
+      <div style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
+        <p style="font-weight: bold; margin-bottom: 8px;">Table 1: Success rate on LIBERO-10-Plus under different perturbation categories.</p>
+        <img src="./static/images/simulation_table_1.png"
+             style="width: 100%; max-width: 1000px; height: auto; display: block; margin: 0 auto;">
       </div>
 
-      <div class="content has-text-justified" style="margin-top: 20px">
-        <p>Moreover, we employed more simulation studies to validate the effectiveness of the proposed methods in generalizing DMP-based manipulation skills under various spatio-temporal constraints. Here we show via-point, obstacle avoidance, space‐limit, and velocity‐limit scenarios performances for STL-DMP generalization.</p>
+      <p>
+        We further evaluate the proposed frameworks on our improved LIBERO and CALVIN benchmarks, which are specifically designed for zero-shot long-horizon compositional manipulation,
+        requiring models to compose familiar primitives into unseen multi-step task sequences.
+        Table 2 presents results on the proposed LIBERO long-horizon compositional benchmark.
+      </p>
+      <div style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
+        <p style="font-weight: bold; margin-bottom: 8px;">Table 2: Success rate on the proposed LIBERO long-horizon compositional benchmark.</p>
+        <img src="./static/images/simulation_table_2.png"
+             style="width: 100%; max-width: 1000px; height: auto; display: block; margin: 0 auto;">
       </div>
 
-      <div style="display: flex; justify-content: center; margin-top: 20px; margin-bottom: 0; background-color: #f0f0f0; padding: 20px; border-radius: 8px;">
-        <div style="text-align: center; margin: 0 5px;">
-          <img src="./static/images/method7.png" style="height: 220px; width: auto; max-width: 100%; object-fit: cover;" />
-          <p>Via Point Scenario</p>
-        </div>
-        <div style="text-align: center; margin: 0 5px;">
-          <img src="./static/images/method8.png" style="height: 220px; width: auto; max-width: 100%; object-fit: cover;" />
-          <p>Obstacle Scenario</p>
-        </div>
-        <div style="text-align: center; margin: 0 5px;">
-          <img src="./static/images/method9.png" style="height: 220px; width: auto; max-width: 100%; object-fit: cover;" />
-          <p>Space Limit Scenario</p>
-        </div>
-        <div style="text-align: center; margin: 0 5px;">
-          <img src="./static/images/method10.png" style="height: 220px; width: auto; max-width: 100%; object-fit: cover;" />
-          <p>Velocity Limit Scenario</p>
-        </div>
+      <p>
+        The results on the CALVIN OOD benchmark further demonstrate the effectiveness of the proposed framework,
+        showing that GNS-VLA achieves stronger compositional performance compared with generalist VLA and world-model baselines.
+      </p>
+      <div style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
+        <p style="font-weight: bold; margin-bottom: 8px;">Table 3: Full-instruction evaluation on the proposed CALVIN OOD long-horizon benchmark.</p>
+        <img src="./static/images/simulation_table_3.png"
+             style="width: 100%; max-width: 1000px; height: auto; display: block; margin: 0 auto;">
       </div>
-
-      <div class="content has-text-justified" style="margin-top: 20px">
-        <p>And, here we show the corresponding state temporal variations in space‐limit and velocity‐limit scenarios.</p>
-      </div>
-
-      <div style="display: flex; justify-content: center; margin-top: 20px; margin-bottom: 0; background-color: #f0f0f0; padding: 10px; border-radius: 8px;">
-        <div style="text-align: center; margin: 0 5px;">
-          <img src="./static/images/method11.png" style="height: 220px; width: auto; max-width: 100%; object-fit: cover;" />
-          <p>Temporal variation of <i>y</i> under space limit</p>
-        </div>
-        <div style="text-align: center; margin: 0 5px;">
-          <img src="./static/images/method12.png" style="height: 220px; width: auto; max-width: 100%; object-fit: cover;" />
-          <p>Temporal variation of <i>z</i> under velocity limit</p>
-        </div>
-      </div>
-      
-   </div>
+    </div>
+  </div>
 </section>
 
 
@@ -562,6 +540,8 @@ Zero-shot long-horizon manipulation remains difficult for Vision-Language-Action
 </section>
 
 
+<!-- ADDITIONAL SECTION HIDDEN -->
+<!--
 <section class="section">
   <div class="container is-max-desktop">
     
@@ -593,6 +573,8 @@ Zero-shot long-horizon manipulation remains difficult for Vision-Language-Action
 
     </div>
 </section>
+-->
+<!-- END ADDITIONAL SECTION HIDDEN -->
 
 
 <section class="section" id="BibTeX">
