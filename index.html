@@ -62,18 +62,18 @@
   }
   
   .slider-item {
-  width: 100%; /* 让每�?.slider-item 填满 .slider-wrapper */
-  height: 100%; /* 让每�?.slider-item 填满 .slider-wrapper */
-  display: flex; /* 使用 Flexbox 布局来居中内�?*/
+  width: 100%; /* 让每�?.slider-item 填满 .slider-wrapper */
+  height: 100%; /* 让每�?.slider-item 填满 .slider-wrapper */
+  display: flex; /* 使用 Flexbox 布局来居中内�?*/
   justify-content: center; /* 水平居中内容 */
   align-items: center; /* 垂直居中内容 */
-  flex-shrink: 0; /* 防止 flex 子元素缩�?*/
+  flex-shrink: 0; /* 防止 flex 子元素缩�?*/
 }
 
 /* 如果 .slider-item 包含图片 */
 .slider-item img {
   width: 100%; /* 宽度填满 .slider-item */
-  height: auto; /* 高度自适应以保持图片比�?*/
+  height: auto; /* 高度自适应以保持图片比�?*/
   object-fit: cover; /* 覆盖整个区域，可能会剪裁某些部分 */
 }
   
@@ -353,7 +353,7 @@ Zero-shot long-horizon manipulation remains difficult for Vision-Language-Action
       <!-- Part 1: Experimental Configuration -->
       <h4 style="text-align: center;">Experimental Configuration</h4>
       <p>
-        We deploy the proposed framework on a Franka FR3 robot equipped with a third-person and a wrist-mounted depth camera. The scene contains four food objects and two target receptacles. Control is performed via a 7-DoF Cartesian delta command, using the same Gello controller for both teleoperation and deployment.
+        We deploy the proposed framework on a <strong>Franka FR3</strong> robot equipped with a third-person and a wrist-mounted depth camera. The scene contains four food objects and two target receptacles. Control is performed via a 7-DoF Cartesian delta command, using the same Gello controller for both teleoperation and deployment.
       </p>
       <div style="text-align: center; margin-top: 16px; margin-bottom: 24px;">
         <img src="./static/images/experimental_configuration.png"
@@ -363,7 +363,7 @@ Zero-shot long-horizon manipulation remains difficult for Vision-Language-Action
       <!-- Part 2: Data Collection -->
       <h4 style="text-align: center;">Data Collection Example</h4>
       <p>
-        We collected a real-robot manipulation dataset using teleoperation. Each trajectory contains synchronized RGB streams from both cameras. The dataset contains 179 episodes (70,266 frames) covering 35 language task types, including 39 one-step, 120 two-step, and 20 three-step episodes.
+        We collected a real-robot manipulation dataset using teleoperation. Each trajectory contains synchronized RGB streams from both cameras. The dataset contains <strong>179 episodes</strong> (70,266 frames) covering 35 language task types, including 39 one-step, 120 two-step, and 20 three-step episodes.
         The figure below shows example data collection frames from both camera views.
       </p>
       <div style="text-align: center; margin-top: 16px; margin-bottom: 24px;">
@@ -397,7 +397,9 @@ Zero-shot long-horizon manipulation remains difficult for Vision-Language-Action
       <h2>Experiments Results Analysis</h2>
 
       <!-- Group 1: Success Cases -->
-      <p>The following videos show successful demonstrations of our method completing 2-step and 3-step long-horizon manipulation tasks in the real world.</p>
+      <ul>
+        <li>Following are successful demonstrations of our method completing long-horizon manipulation tasks in the real world.</li>
+      </ul>
       <div style="background-color: #f0f0f0; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); margin-bottom: 32px;">
         <div style="display: flex; gap: 20px; justify-content: center; align-items: flex-start;">
           <div style="flex: 0 0 calc(33.33% - 10px); min-width: 0;">
@@ -416,7 +418,9 @@ Zero-shot long-horizon manipulation remains difficult for Vision-Language-Action
       </div>
 
       <!-- Group 2: Failure Cases -->
-      <p>Failure cases caused by 3 main problems of zero-shot long-horizon compositional manipulation.</p>
+      <ul>
+        <li>Following are failure cases caused by 3 main problems of zero-shot long-horizon compositional manipulation.</li>
+      </ul>
       <div style="background-color: #f0f0f0; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
         <div style="display: flex; gap: 20px; justify-content: center; align-items: flex-start;">
           <div style="flex: 0 0 calc(33.33% - 14px); min-width: 0;">
